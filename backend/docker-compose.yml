@@ -7,7 +7,7 @@ services:
       - "${DOCKER_REDIS_PORT:-6379}:${DOCKER_REDIS_PORT:-6379}"
     restart: on-failure
     volumes:
-      - redis-data:/data
+      - redis-data:/data/redis
     networks:
       - test-network
 
@@ -16,7 +16,7 @@ services:
     image: mongo:5.0.8
     restart: on-failure
     volumes:
-      - mongo-data:/data/db
+      - mongo-data:/data/mongo
     ports:
       - "${DOCKER_DB_PORT:-27017}:${DOCKER_DB_PORT:-27017}"
     networks:
