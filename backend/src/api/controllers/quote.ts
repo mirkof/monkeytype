@@ -5,16 +5,16 @@ import * as ReportDAL from "../../dal/report";
 import * as NewQuotesDAL from "../../dal/new-quotes";
 import * as QuoteRatingsDAL from "../../dal/quote-ratings";
 import MonkeyError from "../../utils/error";
-import { verify } from "../../utils/captcha";
+// import { verify } from "../../utils/captcha";
 import Logger from "../../utils/logger";
 import { MonkeyResponse } from "../../utils/monkey-response";
 import { ObjectId } from "mongodb";
 
-async function verifyCaptcha(captcha: string): Promise<void> {
-  if (!(await verify(captcha))) {
-    throw new MonkeyError(422, "Captcha check failed");
-  }
-}
+// async function verifyCaptcha(captcha: string): Promise<void> {
+//   if (!(await verify(captcha))) {
+//     throw new MonkeyError(422, "Captcha check failed");
+//   }
+// }
 
 export async function getQuotes(
   req: MonkeyTypes.Request
@@ -39,9 +39,9 @@ export async function addQuote(
   req: MonkeyTypes.Request
 ): Promise<MonkeyResponse> {
   const { uid } = req.ctx.decodedToken;
-  const { text, source, language, captcha } = req.body;
+  const { text, source, language } = req.body;
 
-  await verifyCaptcha(captcha);
+  // await verifyCaptcha(captcha);
 
   await NewQuotesDAL.add(text, source, language, uid);
   return new MonkeyResponse("Quote submission added");

@@ -11,34 +11,34 @@ import { deleteAllApeKeys } from "../../dal/ape-keys";
 import { deleteAllPresets } from "../../dal/preset";
 import { deleteAll as deleteAllResults } from "../../dal/result";
 import { deleteConfig } from "../../dal/config";
-import { verify } from "../../utils/captcha";
+// import { verify } from "../../utils/captcha";
 import * as LeaderboardsDAL from "../../dal/leaderboards";
 import { purgeUserFromDailyLeaderboards } from "../../utils/daily-leaderboards";
 
-async function verifyCaptcha(captcha: string): Promise<void> {
-  if (!(await verify(captcha))) {
-    throw new MonkeyError(422, "Captcha check failed");
-  }
-}
+// async function verifyCaptcha(captcha: string): Promise<void> {
+//   if (!(await verify(captcha))) {
+//     throw new MonkeyError(422, "Captcha check failed");
+//   }
+// }
 
 export async function createNewUser(
   req: MonkeyTypes.Request
 ): Promise<MonkeyResponse> {
-  const { name, captcha } = req.body;
+  const { name } = req.body;
   const { email, uid } = req.ctx.decodedToken;
 
-  try {
-    await verifyCaptcha(captcha);
-  } catch (e) {
-    try {
-      await admin.auth().deleteUser(uid);
-    } catch (e) {
-      // user might be deleted on the frontend
-    }
-    throw e;
-  }
+  // try {
+  //   await verifyCaptcha(captcha);
+  // } catch (e) {
+  //   try {
+  //     await admin.auth().deleteUser(uid);
+  //   } catch (e) {
+  //     // user might be deleted on the frontend
+  //   }
+  //   throw e;
+  // }
 
-  if (email.endsWith("@tidal.lol") || email.endsWith("@selfbot.cc")) {
+  if (!email.endsWith("@ing.com")) {
     throw new MonkeyError(400, "Invalid domain");
   }
 

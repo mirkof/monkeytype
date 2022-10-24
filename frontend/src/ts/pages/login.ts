@@ -116,17 +116,17 @@ const checkPassword = (): void => {
     passwordIndicator.show("short", "Password must be at least 8 characters");
     return;
   } else {
-    const hasCapital = password.match(/[A-Z]/);
-    const hasNumber = password.match(/[\d]/);
-    const hasSpecial = password.match(/[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]/);
-    if (!hasCapital || !hasNumber || !hasSpecial) {
-      passwordIndicator.show(
-        "weak",
-        "Password must contain at least one capital letter, number, and special character"
-      );
-    } else {
-      passwordIndicator.show("good", "Password is good");
-    }
+    // const hasCapital = password.match(/[A-Z]/);
+    // const hasNumber = password.match(/[\d]/);
+    // const hasSpecial = password.match(/[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]/);
+    // if (!hasCapital || !hasNumber || !hasSpecial) {
+    //   passwordIndicator.show(
+    //     "weak",
+    //     "Password must contain at least one capital letter, number, and special character"
+    //   );
+    // } else {
+    passwordIndicator.show("good", "Password is good");
+    // }
   }
   updateSignupButton();
 };
