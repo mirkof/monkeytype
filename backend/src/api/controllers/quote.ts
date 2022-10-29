@@ -134,9 +134,9 @@ export async function reportQuote(
     reporting: { maxReports, contentReportLimit },
   } = req.ctx.configuration.quotes;
 
-  const { quoteId, quoteLanguage, reason, comment, captcha } = req.body;
+  const { quoteId, quoteLanguage, reason, comment } = req.body;
 
-  await verifyCaptcha(captcha);
+  //await verifyCaptcha(captcha);
 
   const newReport: MonkeyTypes.Report = {
     _id: new ObjectId(),
