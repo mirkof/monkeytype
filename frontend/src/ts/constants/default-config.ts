@@ -1,5 +1,5 @@
 export default <MonkeyTypes.Config>{
-  theme: "evil_eye",
+  theme: "vscode",
   themeLight: "evil_eye",
   themeDark: "vscode",
   autoSwitchTheme: false,
