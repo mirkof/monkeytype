@@ -2,13 +2,13 @@ version: "3.8"
 services:
   monkeytype-frontend:
     container_name: monkeytype-frontend
-    image: node:16.13
+    image: node:16.13-alpine
     restart: on-failure
     ports:
       - "3000:3000"
     volumes:
       - ./:/monkeytype
-    entrypoint: 'bash -c "cd /monkeytype && npm run dev-fe"'
+    entrypoint: 'sh -c "cd /monkeytype && npm run dev-fe"'
     depends_on:
       - monkeytype-backend
 
@@ -27,11 +27,11 @@ services:
 
   monkeytype-redis:
     container_name: monkeytype-redis
-    image: redis/redis-stack:6.2.4-v3
+    image: redis:6.2-alpine
     ports:
       - "6379:6379"
-      - "8001:8001"
     restart: on-failure
+    command: "redis-server --save 30 1 --loglevel warning"
     volumes:
       - redis-data:/data/redis
 
