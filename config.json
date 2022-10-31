@@ -1,7 +1,7 @@
 {
   "theme": "vscode",
-  "themeLight": "evil_eye",
-  "themeDark": "vscode",
+  "themeLight": "serika",
+  "themeDark": "serika_dark",
   "autoSwitchTheme": false,
   "customTheme": false,
   "customThemeColors": [
@@ -17,7 +17,7 @@
     "#7e2a33"
   ],
   "favThemes": [],
-  "showKeyTips": true,
+  "showKeyTips": false,
   "showLiveWpm": false,
   "showTimerProgress": true,
   "smoothCaret": true,

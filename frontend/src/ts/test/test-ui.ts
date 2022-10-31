@@ -183,7 +183,7 @@ export function updateWordsHeight(): void {
     $("#words").css("height", "auto");
     $("#wordsWrapper").css("height", "auto");
 
-    let nh = wordHeight * 3;
+    let nh = wordHeight * 4;
 
     if (nh > wordsHeight) {
       nh = wordsHeight;
@@ -209,7 +209,7 @@ export function updateWordsHeight(): void {
         .css("width", "100%")
         .css("margin-left", "unset");
       $("#wordsWrapper")
-        .css("height", wordHeight * 3 + "px")
+        .css("height", wordHeight * 4 + "px")
         .css("overflow", "hidden");
       $(".outOfFocusWarning").css("line-height", wordHeight * 3 + "px");
     }
