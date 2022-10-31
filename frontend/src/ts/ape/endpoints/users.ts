@@ -11,7 +11,7 @@ export default class Users {
 
   async create(
     name: string,
-    captcha: string,
+    captcha?: string,
     email?: string,
     uid?: string
   ): Ape.EndpointData {

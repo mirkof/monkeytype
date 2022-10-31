@@ -102,7 +102,7 @@ router.post(
       email: joi.string().email(),
       name: usernameValidation,
       uid: joi.string(),
-      captcha: joi.string().required(),
+      captcha: joi.string().allow(""),
     },
   }),
   asyncHandler(UserController.createNewUser)

@@ -4,7 +4,7 @@ import { Response, NextFunction } from "express";
 import { RateLimiterMemory } from "rate-limiter-flexible";
 import rateLimit, { Options } from "express-rate-limit";
 
-const REQUEST_MULTIPLIER = process.env.MODE === "dev" ? 100 : 1;
+const REQUEST_MULTIPLIER = process.env.MODE === "dev" ? 300 : 1;
 
 const getKey = (req: MonkeyTypes.Request, _res: Response): string => {
   return (req.headers["cf-connecting-ip"] ||

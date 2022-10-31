@@ -46,8 +46,8 @@ export function hide(resolveToUndefined = false): void {
   }
 }
 
-$("#registerCaptchaPopupWrapper").on("click", (e) => {
-  if ($(e.target).attr("id") === "registerCaptchaPopupWrapper") {
-    hide(true);
-  }
-});
+// $("#registerCaptchaPopupWrapper").on("click", (e) => {
+//   if ($(e.target).attr("id") === "registerCaptchaPopupWrapper") {
+//     hide(true);
+//   }
+// });

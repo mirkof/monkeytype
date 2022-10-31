@@ -42,7 +42,7 @@ router.post(
       text: joi.string().min(60).required(),
       source: joi.string().required(),
       language: joi.string().required(),
-      captcha: joi.string().required(),
+      captcha: joi.string().allow(""),
     },
     validationErrorMessage: "Please fill all the fields",
   }),
@@ -129,7 +129,7 @@ router.post(
         )
         .required(),
       comment: joi.string().allow("").max(250).required(),
-      captcha: joi.string().required(),
+      captcha: joi.string().allow(""),
     },
   }),
   checkUserPermissions({

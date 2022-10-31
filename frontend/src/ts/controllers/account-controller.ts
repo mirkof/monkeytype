@@ -17,7 +17,7 @@ import * as ResultFilters from "../account/result-filters";
 import * as PaceCaret from "../test/pace-caret";
 import * as TagController from "./tag-controller";
 import * as ResultTagsPopup from "../popups/result-tags-popup";
-import * as RegisterCaptchaPopup from "../popups/register-captcha-popup";
+// import * as RegisterCaptchaPopup from "../popups/register-captcha-popup";
 import * as URLHandler from "../utils/url-handler";
 import * as Account from "../pages/account";
 import * as Alerts from "../elements/alerts";
@@ -572,12 +572,13 @@ async function signUp(): Promise<void> {
     Notifications.add("You are offline", 0, 2);
     return;
   }
-  RegisterCaptchaPopup.show();
-  const captcha = await RegisterCaptchaPopup.promise;
-  if (!captcha) {
-    Notifications.add("Please complete the captcha", -1);
-    return;
-  }
+  // RegisterCaptchaPopup.show();
+  const captcha = "";
+  // const captcha = await RegisterCaptchaPopup.promise;
+  // if (!captcha) {
+  //   Notifications.add("Please complete the captcha", -1);
+  //   return;
+  // }
   LoginPage.disableInputs();
   LoginPage.disableSignUpButton();
   LoginPage.showPreloader();
