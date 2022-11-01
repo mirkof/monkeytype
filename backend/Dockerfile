@@ -24,4 +24,4 @@ FROM base as production
 ENV NODE_PATH=./build
 
 EXPOSE 5005
-CMD ["npm", "run", "dev"]
+CMD ["node", "./build/server.js"]

@@ -5,10 +5,10 @@ services:
     image: node:16.13-alpine
     restart: on-failure
     ports:
-      - "3000:3000"
+      - "80:5000"
     volumes:
       - ./:/monkeytype
-    entrypoint: 'sh -c "cd /monkeytype && npm run dev-fe"'
+    entrypoint: 'sh -c "cd /monkeytype/frontend && npm run live"'
     depends_on:
       - monkeytype-backend
 
