@@ -35,7 +35,17 @@ services:
     volumes:
       - redis-data:/data/redis
 
+  monkeytype-mongodb:
+    container_name: monkeytype-mongodb
+    image: mongo:5.0.8
+    restart: on-failure
+    volumes:
+      - mongo-data:/data/mongo
+    ports:
+      - "27017:27017"
+
 volumes:
   redis-data:
+  mongo-data:
 networks:
   test-network:
