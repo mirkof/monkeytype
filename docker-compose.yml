@@ -24,6 +24,7 @@ services:
       - ./:/monkeytype
     depends_on:
       - monkeytype-redis
+      - monkeytype-mongodb
 
   monkeytype-redis:
     container_name: monkeytype-redis
