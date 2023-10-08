@@ -74,13 +74,6 @@ node_modules_bak/
 
 .idea
 
-#firebase
-.firebaserc
-.firebaserc_copy
-serviceAccountKey*.json
-frontend/src/ts/constants/firebase-config.ts
-frontend/src/ts/constants/firebase-config-live.ts
-
 #generated files
 dist/
 frontend/public/
@@ -114,7 +107,11 @@ removeDupes.js
 
 ads.txt
 
-# secrets
+
+# Firebase
+.firebaserc
+.firebaserc_copy
+serviceAccountKey*.json
 backend/src/credentials/serviceAccountKey.json
 frontend/src/ts/constants/firebase-config.ts
 frontend/src/ts/constants/firebase-config-live.ts
